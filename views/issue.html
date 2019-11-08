@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="/public/style2.css">
   </head>
   <body>
     <header>
@@ -18,18 +18,18 @@
         <br>
         <h3>Submit a new issue:</h3>
         <form id="newIssue" method="post" action="/api/">
-          <input type="text" name="issue_title" placeholder="*Title" style="width: 320px; margin-bottom: 3px;" required=''><br>
-          <textarea type="text" name="issue_text" placeholder="*Text" style="width: 320px; height: 100px;" required=''></textarea><br>
-          <input type="text" name="created_by" placeholder="*Created by" style="width: 100px" required=''>
-          <input type="text" name="assigned_to" placeholder="(opt)Assigned to" style="width: 100px">
-          <input type="text" name="status_text" placeholder="(opt)Status text" style="width: 100px"><br>
+          <input type="text" name="issue_title" placeholder="*Title" required=''><!--style="width: 320px; margin-bottom: 3px;"--><br>
+          <textarea type="text" name="issue_text" placeholder="*Text" required=''></textarea><!--style="width: 320px; height: 100px;"--><br>
+          <input class="short" type="text" name="created_by" placeholder="*Created by"required=''> <!--style="width: 100px"-->
+          <input class="short" type="text" name="assigned_to" placeholder="(opt)Assigned to"> <!--style="width: 100px"-->
+          <input class="short" type="text" name="status_text" placeholder="(opt)Status text"> <!--style="width: 100px"--><br>
           <button type="submit">Submit Issue</button>
         </form>
       </div>
       
       <div id='issueDisplay'></div>
       
-      <hr style='margin: 50px; margin-top: 200px'>
+<!--       <hr style='margin: 50px; margin-top: 200px'> -->
     </center>
     
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
@@ -39,7 +39,7 @@
       $(function() {
         var currentProject = window.location.pathname.replace(/\//g, "");;
         var url = "/api/issues/"+currentProject;
-        $('#projectTitle').text('All issues for: '+currentProject)
+        $('#projectTitle').html('All issues for: ' + '<span>' +currentProject + '</span>') 
         $.ajax({
           type: "GET",
           url: url,
@@ -56,7 +56,7 @@
                 '<h3>'+ele.issue_title+' -  ('+openstatus+')</h3>',
                 '<br>',
                 '<p>'+ele.issue_text+'</p>',
-                '<p>'+ele.status_text+'</p>',
+                '<p id="status">'+ele.status_text+'</p>',
                 '<br>',
                 '<p class="id"><b>Created by:</b> '+ele.created_by+'  <b>Assigned to:</b> '+ele.assigned_to,
                 '<p class="id"><b>Created on:</b> '+ele.created_on+'  <b>Last updated:</b> '+ele.updated_on,

@@ -83,7 +83,7 @@ module.exports = function(app) {
         if(req.body.created_by) {updateObject.created_by = req.body.created_by};
         if(req.body.assigned_to) {updateObject.assigned_to = req.body.assigned_to};
         if(req.body.status_text) {updateObject.status_text = req.body.status_text};
-        if(req.body.open === false) {updateObject.open = false};
+        if(req.body.open == "false") {updateObject.open = false};
         var result = await db.collection("issues")
                              .updateOne({"_id": ObjectId(req.body._id)},
                                       {$set: updateObject},function(err, result) {

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow|Karla&display=swap');
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  color: black;
+  padding: 10px;
+  background-repeat: none;
+  height: 100vh;
+  font-family: 'Barlow', sans-serif;
+}
+
+/*Header*/
+#projectTitle {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  padding: 12px;
+  font-family: 'Karla', sans-serif;
+}
+#projectTitle span {
+  background-color: #98757d;
+  color: white;
+}
+
+/*Submit a new issue form*/
+
+#submitNewIssue h3{
+  font-family: 'Barlow', sans-serif;
+  margin-bottom: 0px;
+  background-color: #008080;
+  color: white;
+  border: 4px solid #008080;
+  border-radius: 0px;
+  width: 36%;
+  margin-bottom: 20px;
+  padding: 7px;
+}
+#submitNewIssue input, #submitNewIssue textarea {
+  font-family: 'Barlow', sans-serif;
+  border: 2px solid #004040;
+  border-top: 1px solid #008080;
+  border-left: 1px solid #008080;
+  border-radius: 0px;
+  padding: 7px;
+  background-color: rgba(255, 255, 255, 0.05);
+  margin: 5px;
+  width: 40%;
+  font-size: 14px;
+}
+#submitNewIssue textarea {
+  height: 100px;
+}
+#submitNewIssue .short {
+  width: calc(40%/3 - 8.8px);
+}
+#submitNewIssue button {
+  border: 2px solid #004040;
+  border-top: 1px solid #008080;
+  border-left: 1px solid #008080;
+  margin-top: 10px;
+  padding: 7px;
+  background-color: #004040;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #008080;
+  opacity: 1; /* Firefox */
+  font-size: 12px;
+  font-family: 'Barlow', sans-serif;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #008080;
+  font-size: 12px;
+  font-family: 'Barlow', sans-serif;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #008080;
+  font-size: 12px;
+  font-family: 'Barlow', sans-serif;
+}
+/*Issues*/
+.issue {
+  margin: 20px;
+  padding: 10px;
+  width: 30%;
+  border: 2px solid #800000;
+  border-bottom: 3px solid #800000;
+  border-right: 3px solid #800000;
+}
+.issue h3 {
+  background-color: #800000;
+  color: white;
+  padding: 5px;
+}
+.closed {
+  opacity: 0.5;
+}
+.issue #status {
+  margin: 10px;
+  text-decoration: underline;
+  font-size: 14px;
+  color: #800000;
+}
+.closeIssue, .deleteIssue {
+  color: #00bbbb;
+  font-size: 11px;
+  margin: 5px;
+}
+.id {
+  color:black;
+  font-size: 10.5px;
+}
+.id b {
+  color: #400000;
+}
+
+@media screen and (max-width: 600px) {
+  #submitnewIssue h3 {
+    width: 60%;
+  }
+  #submitNewIssue input, #submitNewIssue textarea {
+     width: 90%; 
+  }
+  #submitNewIssue .short {
+  width: calc(90%/3 - 8.8px);
+  }
+  .issue {
+    width: 80%;
+  }
+}
